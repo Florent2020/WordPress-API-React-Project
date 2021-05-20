@@ -10,18 +10,25 @@ function Nav() {
 	function logout() {
 		setAuth(null);
 		history.push("/");
+		localStorage.clear();
 	}
+
 
 	return (
 		<nav>
-			<Link to="/">Home</Link>
+			<div className="container">
+
+
 			{auth ? (
 				<>
-					| <Link to="/dashboard">Dashboard</Link> | <button onClick={logout}>Log out</button>
+				<Link to="/">Home</Link>
+				<Link to="/admin">Admin</Link>
+				<button className="logout--button" onClick={logout}>Log out</button>
 				</>
 			) : (
-				<Link to="/login">Login</Link>
+				<Link to="/">Home</Link>
 			)}
+			</div>
 		</nav>
 	);
 }

@@ -38,7 +38,7 @@ export default function LoginForm() {
 			const response = await axios.post(url, data);
 			console.log("response", response.data);
 			setAuth(response.data);
-			history.push("/dashboard");
+			history.push("/admin");
 		} catch (error) {
 			console.log("error", error);
 			setLoginError(error.toString());
@@ -46,6 +46,12 @@ export default function LoginForm() {
 			setSubmitting(false);
 		}
 	}
+
+	// const formContainer = document.querySelector (".home--page > form");
+
+	// function login() {
+	// 	formContainer.style.display = "none";
+	// }
 
 	return (
 		<>

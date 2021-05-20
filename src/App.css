@@ -2,19 +2,26 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 35px;
+  margin: 40px 0;
+}
+
 nav {
-  padding: 15px;
-  background: #ccc;
+  margin-left: auto;
+  /* padding: 15px;
+  background: #ccc; */
+  display: table-caption;
 }
 
 nav a {
-  color: darkred;
+  color: white;
   text-decoration: none;
   margin-right: 10px;
 }
 
 form {
-  margin: 1rem auto;
+  margin: 5rem auto;
   padding: 1rem;
   background: #ebebeb;
   border-radius: 6px;
@@ -24,7 +31,7 @@ form {
 input,
 textarea {
   font-size: 1rem;
-  margin-top: 10px;
+  margin: 8px 0;
   width: 100%;
   padding: 5px;
 }
@@ -40,11 +47,69 @@ button {
 
 .container {
   max-width: 1100x;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
+}
+
+.nav-link {
+  padding-left: 0;
+}
+
+.navbar-dark .navbar-brand {
+  font-size: 18px;
 }
 
 .form-error {
   background: #fbb;
   color: darkred;
   padding: 0.5rem 1rem;
+}
+
+/* .spinner--container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+} */
+
+.logout--button {
+  margin-top: 0;
+  width: 80px;
+}
+
+.detail--page nav,
+.edit--detail--page nav {
+  padding: 0;
+  background: transparent;
+}
+
+.detail--page ol,
+.edit--detail--page ol {
+  padding: 0;
+  background: transparent;
+}
+
+/* Admin */
+
+/* .edit--pages {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.pages .card-columns {
+  column-count: 1;
+}
+
+.pages a,
+.edit--pages a {
+  color: #2c2c2c;
+}
+
+.card-body:hover {
+  box-shadow: 0px 0.5px 0.5px 1px #000;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 992px) {
+  nav a {
+    padding: 5px 0;
+  }
 }
