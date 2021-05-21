@@ -8,10 +8,10 @@ import FormError from "../../common/FormError";
 import Heading from "../../layout/Heading";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Spinner from 'react-bootstrap/Spinner';
+import StatusDropdown from "../status/StatusDropdown";
 
 const schema = yup.object().shape({
 	title: yup.string().required("Title is required"),
-    status: yup.string().required("Status is required"),
 });
 
 export default function EditDetail() {
@@ -102,7 +102,7 @@ export default function EditDetail() {
 					</div>
 
 					<div>
-						<input name="status" defaultValue={edit.status} placeholder="Status" {...register('status')} />
+						<StatusDropdown />
 					</div>
 
 
