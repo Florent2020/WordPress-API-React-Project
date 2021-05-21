@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useAxios from "../../../hooks/useAxios";
 import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Spinner from 'react-bootstrap/Spinner';
+import axios from "axios";
 
 export default function PageList() {
 	const [pages, setPages] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const http = useAxios();
 
 	useEffect(function () {
 		async function getPage() {
 			try {
-				const response = await http.get("wp/v2/pages");
+				const response = await axios.get("http://localhost:8080/flower--power/wp-json/wp/v2/pages");
 				console.log("response", response);
 				setPages(response.data);
 			} catch (error) {

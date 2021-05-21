@@ -6,6 +6,7 @@ import CardColumns from 'react-bootstrap/CardColumns';
 import Spinner from 'react-bootstrap/Spinner';
 
 
+
 export default function EditPage() {
 	const [pages, setPages] = useState([]);
 	const [loading, setLoading] = useState(true);

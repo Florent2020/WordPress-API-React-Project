@@ -49,7 +49,9 @@ button {
   max-width: 1100x;
   /* margin: 1rem auto; */
 }
-
+.navbar {
+  margin-bottom: 20px;
+}
 .nav-link {
   padding-left: 0;
 }
@@ -62,6 +64,21 @@ button {
   background: #fbb;
   color: darkred;
   padding: 0.5rem 1rem;
+}
+
+.success {
+  padding: 1rem;
+  margin: 10px 0;
+  background: green;
+  color: white;
+}
+
+.breadcrumb {
+  background: transparent;
+  display: block !important;
+}
+.breadcrumb a {
+  color: darkred;
 }
 
 /* .spinner--container {
@@ -109,7 +126,14 @@ button {
 }
 
 @media only screen and (min-width: 992px) {
+  nav {
+    display: block;
+  }
   nav a {
     padding: 5px 0;
+  }
+
+  .breadcrumb {
+    padding-left: 0;
   }
 }

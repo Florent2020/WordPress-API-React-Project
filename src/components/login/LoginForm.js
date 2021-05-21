@@ -26,13 +26,14 @@ export default function LoginForm() {
 		resolver: yupResolver(schema),
 	});
 
-	const [, setAuth] = useContext(AuthContext);
+	const [auth, setAuth] = useContext(AuthContext);
 
 	async function onSubmit(data) {
 		setSubmitting(true);
 		setLoginError(null);
 
 		console.log(data);
+		console.log(auth);
 
 		try {
 			const response = await axios.post(url, data);

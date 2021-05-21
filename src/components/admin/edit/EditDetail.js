@@ -12,7 +12,6 @@ import Spinner from 'react-bootstrap/Spinner';
 const schema = yup.object().shape({
 	title: yup.string().required("Title is required"),
     status: yup.string().required("Status is required"),
-
 });
 
 export default function EditDetail() {
@@ -98,13 +97,15 @@ export default function EditDetail() {
 
 				<fieldset disabled={updatingPage}>
 					<div>
-						<input name="title" defaultValue={edit.title.rendered} placeholder="Title"  {...register('title, { required: true }')} />
+						<input name="title" defaultValue={edit.title.rendered} placeholder="Title"  {...register('title')} />
 						{errors.title && <FormError>{errors.title.message}</FormError>}
 					</div>
 
 					<div>
-						<input name="status" defaultValue={edit.status.rendered} placeholder="Status" {...register('status')} />
+						<input name="status" defaultValue={edit.status} placeholder="Status" {...register('status')} />
 					</div>
+
+
 
 					<button>Update</button>
 				</fieldset>

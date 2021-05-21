@@ -10,7 +10,7 @@ function Nav() {
 	function logout() {
 		setAuth(null);
 		history.push("/");
-		localStorage.clear();
+		window.localStorage.clear();
 	}
 
 
@@ -28,6 +28,8 @@ function Nav() {
 			) : (
 				<Link to="/">Home</Link>
 			)}
+
+
 			</div>
 		</nav>
 	);
