@@ -48,16 +48,10 @@ export default function LoginForm() {
 		}
 	}
 
-	// const formContainer = document.querySelector (".home--page > form");
-
-	// function login() {
-	// 	formContainer.style.display = "none";
-	// }
-
-	return (
+		return (
 		<>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				{loginError && <FormError>{loginError}</FormError>}
+				{loginError && <FormError>Username or Password is wrong!!!</FormError>}
 				<fieldset disabled={submitting}>
 					<div>
 						<input name="username" placeholder="Username" {...register('username')} />

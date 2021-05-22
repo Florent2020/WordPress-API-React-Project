@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useAxios from "../../../hooks/useAxios";
 import Heading from "../../layout/Heading";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Spinner from 'react-bootstrap/Spinner';
+import axios from "axios";
+import { BASE_URL } from "../../../constants/api";
 
 export default function EditPost() {
 	const [post, setPost] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 
-	const http = useAxios();
-
 	let { id } = useParams();
 
-	const url = `wp/v2/pages/${id}`;
+
+	const url = BASE_URL + `wp/v2/pages/${id}`;
 
 
 
@@ -23,7 +23,7 @@ export default function EditPost() {
 			async function getPost() {
 
 				try {
-					const response = await http.get(url);
+					const response = await axios.get(url);
 					console.log("response", response.data);
 					setPost(response.data);
 				} catch (error) {
@@ -34,14 +34,12 @@ export default function EditPost() {
 				}
 
 			}
-
 			getPost();
 
 		},
 		// eslint-disable-next-line
 		[]
 	);
-
 
 
 	if (loading) return <div>

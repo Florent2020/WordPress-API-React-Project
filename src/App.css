@@ -93,8 +93,18 @@ select {
 .edit--detail--page ol {
   width: 130px;
 }
+
+.breadcrumb-item {
+  width: 130px;
+}
+
 .breadcrumb a {
   color: darkred;
+}
+
+.breadcrumb a:hover {
+  color: darkred;
+  text-decoration: underline;
 }
 
 .logout--button {
